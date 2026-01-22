@@ -10,13 +10,21 @@
 
 // TODO: Write a function that calculates the price of an order of apples given
 // the quantity bought.
-// fn calculate_price_of_apples(???) -> ??? { ??? }
+
+fn calculate_price_of_apples(qty: i32) -> i32 {
+    if qty < 41 {
+        qty * 2
+    }
+    else {qty
+    }
+}
 
 fn main() {
+    println!("Total: {}", calculate_price_of_apples(41));
     // You can optionally experiment here.
 }
 
-// Don't change the tests!
+//Don't change the tests!
 #[cfg(test)]
 mod tests {
     use super::*;
