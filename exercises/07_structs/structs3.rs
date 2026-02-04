@@ -24,14 +24,17 @@ impl Package {
     }
 
     // TODO: Add the correct return type to the function signature.
-    fn is_international(&self) {
-        // TODO: Read the tests that use this method to find out when a package
-        // is considered international.
+    fn is_international(&self) -> bool {
+        if self.sender_country != "Canada" {
+            return true;
+        }
+        self.recipient_country != "Canada"
     }
 
     // TODO: Add the correct return type to the function signature.
-    fn get_fees(&self, cents_per_gram: u32) {
+    fn get_fees(&self, cents_per_gram: u32) -> u32 {
         // TODO: Calculate the package's fees.
+        cents_per_gram * self.weight_in_grams
     }
 }
 
