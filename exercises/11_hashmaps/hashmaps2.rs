@@ -29,7 +29,12 @@ fn fruit_basket(basket: &mut HashMap<Fruit, u32>) {
     ];
 
     for fruit in fruit_kinds {
-        // TODO: Insert new fruits if they are not already present in the
+        let number = basket.get(&fruit).copied();
+        // *same as: if number == None { 
+        if number.is_none() {
+            basket.insert(fruit, 1);
+        }
+            // TODO: Insert new fruits if they are not already present in the
         // basket. Note that you are not allowed to put any type of fruit that's
         // already present!
     }

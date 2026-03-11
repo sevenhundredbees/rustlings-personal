@@ -8,18 +8,28 @@ use std::collections::HashMap;
 
 fn fruit_basket() -> HashMap<String, u32> {
     // TODO: Declare the hash map.
-    // let mut basket =
+    let mut basket = HashMap::new();
 
     // Two bananas are already given for you :)
     basket.insert(String::from("banana"), 2);
-
+    basket.insert(String::from("apple"), 3);
+    basket.insert(String::from("kiwi"), 1);
     // TODO: Put more fruits in your basket.
 
     basket
 }
 
 fn main() {
-    // You can optionally experiment here.
+    fn print_basket() {
+        let basket = fruit_basket();
+        let banana = String::from("banana");
+        let bananas = basket.get(&banana).copied().unwrap_or(0);
+        for (key, value) in &basket {
+            println!("{key}: {value}");
+        };
+    }    
+    print_basket();
+    println!{"bananas in basket: {bananas}"};
 }
 
 #[cfg(test)]
