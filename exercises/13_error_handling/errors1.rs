@@ -5,18 +5,12 @@
 // the function signature and body to return `Result<String, String>` instead
 // of `Option<String>`.
 fn generate_nametag_text(name: String) -> Result<String, String> {
-
-        let result = match name {
-            Ok(nam) => format!("Hi! My name is {name}"),
-            Err(err) => format!("Empty names aren't allowed")
-        };
-        result
-    //if name.is_empty() {    
+    if name.is_empty() {
         // Empty names aren't allowed
-    //    None
-    //} else {
-    //    Some(format!("Hi! My name is {name}"))
-    //}
+        Err("Empty names aren't allowed".to_string())
+    } else {
+        Ok(format!("Hi! My name is {name}"))
+    }
 }
 
 fn main() {
